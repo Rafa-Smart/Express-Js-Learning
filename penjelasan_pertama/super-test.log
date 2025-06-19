@@ -1,0 +1,4 @@
+nah di express js ini kita tidak bisa menggunakan testing unit test menggunakan jest
+
+maka kita bisa menggunakan library super test
+npm install --save-dev supertest
