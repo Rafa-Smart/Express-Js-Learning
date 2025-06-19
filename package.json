@@ -1,0 +1,22 @@
+{
+  "name": "belajar-materi-express-js",
+  "version": "1.0.0",
+  "description": "Belajar-materi-Express-Js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "type": "module",
+  "author": "Rafa Khadafi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "@types/jest": "^30.0.0",
+    "babel-jest": "^30.0.1",
+    "jest": "^30.0.1",
+    "supertest": "^7.1.1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
