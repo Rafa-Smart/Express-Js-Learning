@@ -22,6 +22,10 @@ app.listen = function listen() {
 // Array.prototype.slice.call(arguments) digunakan untuk mengubah arguments menjadi array sungguhan
 //   jadi si args ini isnya adlaah fungsi fungis yg ada pada si slice ini
 
+// dan kenapa ini masih pake cara yg ribet, karena dulu hanya ini cara yg terbaik untuk rubah objek arguemnt
+// menjadi array asli
+// sekarnag sudah bisa pake Array.from(arguments)
+
 // app.listen(3000, 'localhost', () => {
 //   console.log('Server jalan!');
 // });
@@ -29,6 +33,8 @@ app.listen = function listen() {
 // args = [3000, 'localhost', [Function]]
 console.log(args)
   if (typeof args[args.length - 1] === 'function') { // jika paramter terakhirnya fungsi / callback maka
+    // nah disini si fungisnya kita ubah menajadi fungsi di once lihat, dan perhatikan
+
     var done = args[args.length - 1] = once(args[args.length - 1])
     server.once('error', done)
   }

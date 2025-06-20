@@ -51,3 +51,28 @@ app.get("/putri", (req, res) => {
 
 
 app.listen(3000, () => console.log("server running on port 3000...."))
+
+
+// ohh jadi cara kerja fecth data itu dia bakal ngambil res
+// nah di then res ini kita conversi ke res.json()
+// dan sebenernya kita bisa mengubahnya ke res.body juga untuk mengambil body
+// mentahnya
+
+// async () => {
+
+//     const data = await fetch("https://chatgpt.com/c/6854da89-2d38-8009-bf71-d568eb192694")
+
+//     // nah data ini berisi semua response dari si server
+//     // dan kita bisa ngambil datanya dalam bentuk json()
+//     // aau bentuk res.body -> mentahan
+//     data.then(res => {
+//         return res.json()
+//     }) 
+// }
+
+
+
+
+
+
+
