@@ -37,14 +37,22 @@ describe("teesting url", () => {
     // expect(response.body).toContainEqual({
     //   path: "/hello/world"
     // });
-
+    
     // itu ga bisa karena bukan array
 
+    // tapi bisa pake ini
+    expect(response.body).toMatchObject({
+      path: "/hello/world"
+    })
+    
+    // expect(response.body).toContainEqual({
+    //   path: "/hello/world"
+    // });
     // jadi kita bisa pake ini aja
     expect(response.body.path).toBe("/hello/world");
 
     // ini ga bisa jadi kita pake test selanjutnya
-    // console.table(response)
+    // console.table(`dari si file 10 : ${response.body.baseUrl}`)
   });
 
   test("test 2...", (done) => {
@@ -56,7 +64,7 @@ describe("teesting url", () => {
           return done(err);
         } else {
         //   console.log(res); // ini bakalan panjang bangett
-          console.log(res.body);
+          console.table(res.body);
           done();
         }
       });

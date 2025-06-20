@@ -22,7 +22,7 @@ console.clear();
 describe("testing request method get", () => {
     const app = express();
     app.get("/test", (req, res) => {
-        let type = req.get("accept")
+        let type = req.get("accept") // -> buat dapetin si headernya, dengan key Accpet
         res.send(`req header accept : ${type}`)
     })
 

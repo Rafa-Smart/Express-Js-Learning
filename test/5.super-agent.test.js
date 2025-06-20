@@ -32,6 +32,8 @@ describe("GET /hello", () => {
       .get("/hello") // <- superagent bekerja di balik layar
       .expect("Content-Type", /json/)
       .expect(200)
+
+      // kita bia juga menexpect si resnya, dengna cara menchaining
       
     console.log(response.body); // { message: 'Hello, world!' }
   });
