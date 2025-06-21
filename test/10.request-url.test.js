@@ -29,7 +29,7 @@ app.get("/hello/world", (req, res) => {
 });
 
 describe("teesting url", () => {
-  test("test 1...", async () => {
+  test("test 1...", async () =>  {
     const response = await request(app)
       .get("/hello/world")
       .query({ name: "rafa", kelas: "10pplg2" });

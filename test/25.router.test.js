@@ -38,6 +38,11 @@ router.use('/rafa', (req, res, next) => {
 // karena kalo engga ditambahkan maka secara default
 // router ini tidka akna jalan
 
+router.get('/rafa', (req,res) => {
+    res.send(`halo ${req.query.nama}`)
+})
+
+
 // cara menambahkannya
 app.use(router)
 
@@ -47,9 +52,7 @@ app.use(router)
 // maka seluruh initialisasi middleware dan method http ini akna mebjalan hanya di route /rafa/
 
 
-router.get('/rafa', (req,res) => {
-    res.send(`halo ${req.query.nama}`)
-})
+
 
 test("testing 1...", async () => {
     const response = await request(app).get("/rafa").query({nama:"rafa"})

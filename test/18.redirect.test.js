@@ -19,8 +19,12 @@ app.get('/', (req, res) => {
     // res.redirect('https://github.com/')
 
     // bisa juga
-    res.header('location', '/to-next-page').status(301).end()
+    // res.header('location', '/to-next-page').status(301).end()
     // kalo header itu defaultnya di express status codenya 200
+
+    // bisa juga gini
+
+    res.set("location", "/to-next-page").status(301).end()
 });
 
 
