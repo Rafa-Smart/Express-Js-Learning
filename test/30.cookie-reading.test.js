@@ -58,6 +58,13 @@ test("Test Cookie Read", async () => {
 test("Test Cookie Write", async () => {
     const response = await request(app).post("/login")
         .send({name: "jamal"});
-    expect(response.get("Set-Cookie").toString()).toBe("Login=jamal; Path=/");
+    expect(response.get("Set-Cookie").toString()).toBe("Login=jamal; Path=/login");
+    // expect(response.cookies).toContain("Login=jamal; Path=/login");
+    // yg atas intu ga bisa
+    console.log(`ini data cookie ${response.cookies}`) // undefined
+    console.log(`ini data cookie ${response.get("set-cookie")}`) // 
+    // Login=jamal; Path=/login
+
+    // jadi disini kita cek bahwa, cookie ini berisi login=jamal, da berasal dari path login
     expect(response.text).toBe("Hello jamal");
 });
