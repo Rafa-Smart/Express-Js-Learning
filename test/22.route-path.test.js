@@ -15,18 +15,34 @@ console.clear()
 const app = express();
 // jadi inikita buat 
 // /barang/id:apapun angka
-app.get(/^\/barang\/id\:\d+$/, (req, res) => {
-    res.send("selamat datang...")
+app.get(/^\/barang\/(\d+$)/, (req, res) => {
+    res.send("selamat datang..."+req.params[0])
+})
+app.get('/barang2/:id', (req, res) => {
+    res.send("selamat datang..."+req.params.id)
 })
 
 
 test("testing 1...", async () => {
-    const response = await request(app).get('/barang/id:1234')
+    const response = await request(app).get('/barang/1234')
     expect(response.status).toBe(200)
-    expect(response.text).toBe("selamat datang...")
+    expect(response.text).toBe("selamat datang...1234")
 })
+
 test("testing 2...", async () => {
-    const response = await request(app).get('/barang/id:jamal')
+    const response = await request(app).get('/barang2/1234')
+    expect(response.status).toBe(200)
+    expect(response.text).toBe("selamat datang...1234")
+})
+test("testing 3...", async () => {
+    const response = await request(app).get('/barang/jamal')
     expect(response.status).toBe(404) // ditolak
+})
+test("testing 4...", async () => {
+    const response = await request(app).get('/barang2/jamal')
+    expect(response.status).toBe(200) // 
+    // disini ga ditolak, karena kita ga ngasih tau
+    // bahwa itu wajib angka, jadi hurufpun bibsa
+    // untuk yg route barang2 ini
 })
 

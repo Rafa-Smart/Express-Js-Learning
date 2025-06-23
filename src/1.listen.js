@@ -36,6 +36,9 @@ console.log(args)
     // nah disini si fungisnya kita ubah menajadi fungsi di once lihat, dan perhatikan
 
     var done = args[args.length - 1] = once(args[args.length - 1])
+    // jadi ini tuh maksudnya
+    // jadi kita daftarkan si funcion ini ke eventname error
+    server.once("error", function(){})
     server.once('error', done)
   }
   return server.listen.apply(server, args)

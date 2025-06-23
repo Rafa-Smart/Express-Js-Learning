@@ -39,7 +39,7 @@ test("testing signed...", async () => {
     expect(response.status).toBe(200);
     expect(response.text).toContain("hello rafa")
 
-    expect(response.get('Set-Cookie')).toContainEqual('login=s%3Arafa.Z%2BpAbE4GryZfi5KlC%2BxsxWGyW%2ByIJGdIVzMxCmiNw0g; Path=/login')
+    expect(response.get('Set-Cookie')).toContainEqual('login=s%3Arafa.Z%2BpAbE4GryZfi5KlC%2BxsxWGyW%2ByIJGdIVzMxCmiNw0g; Path=/login') // iniyg dikasih sama si response
     console.log(response.get('Set-Cookie'))
 
     // karena ini array

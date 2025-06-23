@@ -115,7 +115,7 @@ app.get("/rafa", (req, res) => {
 
     res.status(200).send("hello response")
     // jadi kalo kita akses /rafa saja
-    // maka akn muntul haloo response
+    // maka akn muncul haloo response
 
     // tapi kalo kita akses /style.css,
     // maka akan muncul file style.cssnya

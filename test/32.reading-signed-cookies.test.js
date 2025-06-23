@@ -32,6 +32,10 @@ app.use('/tes',(req, res, next) => {
     // makanya kita bisa otomatis emnggunakan signedCookies
     // agar otomatis di signed ulang dan diambil datanya
 
+    // jadi kalo misalakn rata cookienya bisa diparser, maka artinya cookienya
+    // ga  dirubah
+    // tapi kalo ga bisa di parser, maka berati data cookie nya sempat dirubah di sisi browser
+
     if(req.signedCookies.login == "jamal"){
         next()
     } else {

@@ -13,7 +13,8 @@ app.set("view engine", "html");
 app.engine("html", mustacheExpress());
 
 app.get('/', (req, res) => {
-    res.render("index", {
+    res.render("index", { // jadi index ini mkasudnya adalah, file index.html
+        // jadi untuk route / akna di render file html
         title: "Hello World",
         say: "This is a test"
     });

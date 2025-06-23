@@ -105,3 +105,6 @@ test("test response middleware..", async () => {
     expect(response.get('x-powered-by')).toBe("rafa khadafi")
 } )
 
+// atau jika 
+// app.use("/rafa",logger)
+// iniartinya middleware ini hanya berlaku pada routing yg awalnya /rafa termasuk /rafa

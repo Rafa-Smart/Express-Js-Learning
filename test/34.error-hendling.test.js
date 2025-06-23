@@ -20,6 +20,10 @@ const errorMiddleware = (err, req, res, next) => {
     // dan disini kita ga pake next agar langsung brehenti
 };
 
+// jadi kalo dirouter yg dikasih middleware ini, maka ketika
+// router itu ada throw error maka errornya akna masuk ke parameter err di imddleware
+// dan bisa kita akses
+
 app.get('/', (req, res) => {
     // ini sengaja error
     throw new Error("Ups");

@@ -6,7 +6,7 @@
 import express from "express";
 import request from "supertest";
 
-console.clear()
+console.clear();
 
 describe("testing query param", () => {
   const app = express();
@@ -15,6 +15,13 @@ describe("testing query param", () => {
   });
   app.get("/jamal", (req, res) => {
     res.send(`hello ${req.query.first} ${req.query.last}`);
+  });
+  app.get("/products/:id", (req, res) => {
+    res.status(200).send(`data yg kamu minta ${req.params.id}`);
+  });
+
+  app.get(/^\/category\/(\d+)$/, (req, res) => {
+    res.status(200).send(`data yg kamu minta ${req.params[0]}`);
   });
 
   test("testing 1...", async () => {
@@ -42,7 +49,32 @@ describe("testing query param", () => {
     // tpi bisa jgua seperti ini
     const response = await request(app).get(`/jamal?${data.toString()}`);
 
-    expect(response.text).toBe("hello jamal istiqomah")
-
+    // tapi kalo misalkan kita masukan misal /products/20, maka ii akna masuk di params.id; / apa yg kamu masukan di products/...
+    // dan di routernya juga harus kita pastikan gini
+    // /products/(id)
+    // lihat di tes 3
+    expect(response.text).toBe("hello jamal istiqomah");
   });
+
+  it("testing 3...", async () => {
+    const response = await request(app).get("/products/40");
+    expect(response.text).toBe("data yg kamu minta 40");
+    expect(response.status).toBe(200);
+
+    // tapi kalo misalkan kita masukan misal /products/20, maka ii akna masuk di params;
+    // dan di routernya juga harus kita pastikan gini
+    // /products/:id
+
+ 
+  });
+
+
+  it("testing 4...", async () => {
+    const response = await request(app).get("/category/50");
+    expect(response.text).toBe("data yg kamu minta 50");
+    expect(response.status).toBe(200);
+
+       // tapi kalo pake regex, itu harus pake (\d+)
+    // jadi pake kurung dn masuknya ke params[0]
+  })
 });
