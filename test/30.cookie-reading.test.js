@@ -32,6 +32,9 @@ app.post('/login', (req, res) => {
     //  Jika path: "/", maka cookie akan dikirim ke semua endpoint di domain itu.
     // Jika path: "/login", maka cookie hanya dikirim saat user mengakses /login, /login/verify, /login/dashboard, dst.
 
+    // maksudnya adaalh cookie ini akna berlaku jika hanya di path /login, /login/rafa, dll
+    // yg selain path /login maka akan tidak ada cookienya
+
     // jadi kao kita akses route lain yg bukan /login
     // maka cookie ini ga akan ada
 
