@@ -62,6 +62,7 @@ test("Test Cookie Write", async () => {
     const response = await request(app).post("/login")
         .send({name: "jamal"});
     expect(response.get("Set-Cookie").toString()).toBe("Login=jamal; Path=/login");
+    // disini kita buat string, karena awalnya itu array
     // expect(response.cookies).toContain("Login=jamal; Path=/login");
     // yg atas intu ga bisa
     console.log(`ini data cookie ${response.cookies}`) // undefined

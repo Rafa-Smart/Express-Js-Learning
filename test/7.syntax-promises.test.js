@@ -14,6 +14,10 @@ describe("GET /users", function () {
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(200)
+
+      // jadi ini tuh, kalo ita mau ngambil response atua errny
+      // maka kita harus then kna dulu
+
       .then((response) => {
         expect(response.body.email).toEqual("foo@bar.com");
       })

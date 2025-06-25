@@ -27,6 +27,12 @@ app.post('/rafa', (req, res) => {
 
 // buat middleware
 app.use('/tes',(req, res, next) => {
+    // disini kalo kita set cookienya dan pathya /login
+    // maka ga akan masuk ke route ini, masuk tapi(cookienya g ada)
+    // karena route yg berlakunya hanya /login/apa, /login/user, dll
+
+
+
     // jadi kal kita ngambil data lansung dari req.cookies maka akan 
     // isinya akan terdapat data signednya
     // makanya kita bisa otomatis emnggunakan signedCookies
