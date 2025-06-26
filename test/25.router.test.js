@@ -7,6 +7,20 @@
 
 // nah biasanya kna kita mamasukan middleware dan method http langusng ke app
 
+// express.Router() adalah mini-aplikasi router dan middleware yang dapat Anda gunakan untuk mengatur rute secara modular dan terpisah dari file utama aplikasi (app.js atau index.js).
+
+//  Definisi teknis: express.Router adalah sebuah class yang menyediakan fungsi routing seperti .get(), .post(), .put(), .delete(), dan fungsi middleware seperti .use(). Ia bekerja mirip seperti instance express() tapi digunakan hanya untuk routing.
+
+
+// Tanpa Router, semua endpoint (/users, /products, /auth, dll.) akan menumpuk dalam satu file (app.js). Ini tidak 
+// skalabel dan sulit dipelihara.
+
+//  3.Memisahkan Tanggung Jawab (Separation of Concerns)
+// Routing user ditangani oleh userRouter.
+
+// Routing produk oleh produkRouter.
+
+// jadi kit bisa mengatur middleware khusus per router, tanpa campur tangan bagian lain.
 
 
 import express, { Router } from 'express';

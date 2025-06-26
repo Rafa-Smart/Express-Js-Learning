@@ -66,6 +66,7 @@ test("Test Cookie Write", async () => {
     // expect(response.cookies).toContain("Login=jamal; Path=/login");
     // yg atas intu ga bisa
     console.log(`ini data cookie ${response.cookies}`) // undefined
+    console.log(`ini data cookie ${response.cookie}`) //   ini data cookie Login=jamal; Path=/login
     console.log(`ini data cookie ${response.get("set-cookie")}`) // 
     // Login=jamal; Path=/login
 

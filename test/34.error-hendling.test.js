@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
     // ini sengaja error
     throw new Error("Ups");
 });
+
 app.use(errorMiddleware);
 
 test("Test Response", async () => {

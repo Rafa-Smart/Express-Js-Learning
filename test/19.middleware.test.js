@@ -92,7 +92,8 @@ const app = express();
 app.use(logger); // untuk semua router
 app.use(init); // untuk semau router
 
-
+// jadi sebeum masuk ke rrouter ini, pasti masuk dulu ke middleware loger, dan juga init,
+// karena pada middleware ini, tidak di set untuk prefix route yg mana
 app.get("/rafa", (req,res) => {
     res.json({email:"rafakhadafi1205@gmail.com"})
 })
