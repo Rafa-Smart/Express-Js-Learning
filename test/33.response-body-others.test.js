@@ -34,6 +34,9 @@ test("testing 1...", () => {
 
 
 const app = express();
+
+//  disini buat midleware kallo error atau jika routenya ga ada
+
 // jadi maksudnya adalah kita ambil
 // /file/nama filenya dan diakhiri dengan .log
 app.get(/^\/file\/(.+\.log)$/, (req, res, next) => { 
@@ -59,8 +62,19 @@ app.get(/^\/file\/(.+\.log)$/, (req, res, next) => {
 
 })
 
+app.use((req, res, next) => {
+    res.status(500).send("route tidak ada")
+})
+
 test("testing sendFile...", async () => {
     const response = await request(app).get("/file/test-file.log");
     expect(response.status).toBe(200);
     expect(response.text).toContain("haloo ini dari file log");
+})
+
+
+test("tess 2...", async () => {
+    const response = await request(app).get("/salah");
+    expect(response.status).toBe(500)
+    expect(response.text).toBe("route tidak ada")
 })

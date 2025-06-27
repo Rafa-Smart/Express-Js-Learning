@@ -25,7 +25,7 @@ const options = {
 
 // nah kalo misalakn pas orang mau akses file statisnya
 // dan kamu inign menambhakan header, maka ibsa tambahkan lagi middleware sebelum middleware express.static
-
+////
 // atau bisa juga di optionsnya di setHeaders (liat di options)
 
 // conoth dibawah
