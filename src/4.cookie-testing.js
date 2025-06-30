@@ -35,6 +35,8 @@ app.use('/get-cookie', (req,res,next) => {
     }
     next()
 })
+
+
 app.get('/get-cookie', (req, res) => {
     console.log(req.get("set-cookie"))
     res.send(`sudah ada cookie ${req.cookies.nama}`)

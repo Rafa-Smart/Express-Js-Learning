@@ -31,3 +31,8 @@ test("Test Response Not Found", async () => {
     const response = await request(app).get("/halaman-tidak-ada");
     expect(response.text).toBe("404 Not Found Euy");
 });
+
+
+
+// bedanya dengan error hanlder adalah , error handler ini akan menangkap error yang terjadi di dalam route, 
+// sedangkan middleware ini akan menangkap jika route tidak ditemukan

@@ -78,3 +78,9 @@ test("tess 2...", async () => {
     expect(response.status).toBe(500)
     expect(response.text).toBe("route tidak ada")
 })
+
+test("testing 3...", async () => {
+    const response = await request(app).get("/file/salah.log");
+    expect(response.status).toBe(404);
+})
+
