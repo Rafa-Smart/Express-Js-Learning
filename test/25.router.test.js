@@ -72,10 +72,17 @@ app.use(router)
 const router2 = express.Router();
 
 router2.use((req,res,next) => {
+
+    // dan middleware ini tidak akan berjalan di route /rafa
+    // jadi ini hanya akan berjalan di route /jamal saja
+
     res.set({"content-type":'text/plain'})
     // disini kita buat properti baru di reqnya
     req.nama = "jamaluddin"
     req.umur = 15
+
+    res.nama = "jamaluddin"
+    res.umur = 15
     console.log("sudah emngakses router2 dengna /jamal")
     next()
 })
@@ -136,3 +143,19 @@ test("testing 2...", async () => {
 // });
 
 // app.use("/jamal", router2);
+
+
+// disini coba kita testing apakah route di jamla yang ada di route2, bisa juga diakses di router rafa
+// karena di router jamal ini ada yang hanya /, jadi bisa di akses dimana saja
+// tapi kita ga tau, karena rafa dan jamla ini beda route
+
+
+test("testing 3...", async () => {
+    const response = await request(app).get("/rafa")
+    expect(response.nama).not.toBeDefined()
+    expect(response.umur).not.toBeDefined()
+
+    // jadi manipuklasi res.nama dan res.umur yg ada di middleware yang meskipun routenya /
+    // tidak akan berpengaruh di route /rafa, karena beda route
+})
+

@@ -85,6 +85,16 @@ describe("testing response status...", () => {
     // response.body biasanya dipakai untuk JSON (.json())
     // response.text untuk respons berbentuk teks atau HTML
   });
+
+  // okek disini kita akan coba jika kita mengirim request dengan format yang tidak ada
+  it("test 4.", async () => {
+    const response = await request(app).get("/rafa").set("Accept", "application/xml");
+    // disini kita set agar request kita mengirimkan xml
+    // yang seharusnya tidka bisa
+    expect(response.status).toBe(406);
+  })
+
+
 });
 
 

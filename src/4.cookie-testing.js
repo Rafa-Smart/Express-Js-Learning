@@ -54,6 +54,7 @@ app.listen(3000, () => console.log("jalan....."))
 // jadi pertama itu kamu masuk dulu ke set, baru nanti ke get
 
 
+
 // okee
 // jadi kalo mau ngetes itu harus sambil buka dulu applicationnya ya
 // jadi pas langsung ke get (ketika cookienya ga ada (sebelum ke set)) maka akn langusng

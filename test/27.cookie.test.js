@@ -1,5 +1,9 @@
 // Cookie adalah data kecil yang disimpan di sisi klien (browser) dan dikirimkan bersama setiap permintaan HTTP ke server.
 
+// jadi kalo cookie di res itu akan menjadi cookie
+// tapi kalo di req itu akan menjadi cookies
+
+
 // https://chatgpt.com/c/6856a636-47d4-8009-81d9-de0d2c030da9
 
 // Di Express.js, cookie digunakan untuk:

@@ -18,8 +18,8 @@ import request from "supertest";
 
 const app = express();
 // jadi maksudnya adalah kita ambil
-// /file/nama filenya dan diakhiri dengan .log
-app.get(/^\/file\/(.+\.log)$/, (req, res, next) => { 
+// /file/nama filenya dan diakhiri dengan .json
+app.get(/^\/file\/(.+\.json)$/, (req, res, next) => { 
     // disini kia pake method next, agar bisa dipangil ketika error mengiri file
     
     const namaFile = req.params[0];
@@ -44,3 +44,17 @@ app.get(/^\/file\/(.+\.log)$/, (req, res, next) => {
 app.listen(3000, () => {
     console.log('server jalan di port 3000...')
 })
+
+
+
+// PENTINGGGGG
+// kita bisa mengambil data file ini dari luar menggunakan get pada url 
+// http://localhost:3000/file/test-file.json
+
+// tadi saya sudha mencobanya di postman
+// dan sudah dapat datanya
+
+
+
+
+

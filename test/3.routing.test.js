@@ -29,3 +29,30 @@
 test("tes aja", () => {
     expect(7+2).toBe(9)
 })
+
+
+// test doang
+
+function sayHello(nama) {
+    if(!nama) {
+        throw new Error("Nama tidak boleh kosong")
+    }
+    return `Hello, ${nama}`;
+}
+
+test("testing lagii...", () => {
+
+    expect(sayHello("Rafa")).toBe("Hello, Rafa");
+    expect(() => sayHello()).toThrow("Nama tidak boleh kosong");
+    expect(() => sayHello()).toThrow(Error);
+
+    // atau bisa juga kalo mau lihat detail errornya
+    // jadi kita bisa pake try catch
+    try{
+        sayHello(); // sengaja error ga pake nama
+    } catch(e){
+        expect(e.message).toBe("Nama tidak boleh kosong");
+        expect(e).toBeInstanceOf(Error);
+    }
+
+})

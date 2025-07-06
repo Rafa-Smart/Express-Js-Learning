@@ -37,6 +37,7 @@ describe("testing response-header...", () => {
     const app = express();
     app.get("/rafa", (req, res) => {
         res.set({
+            // bisa satu satu, bisa juga sekaligus banyak
             "Content-Type": "application/json",
             "X-powered-by":"rafa khadafi"
         }).json({message:"haloo semuanya"})

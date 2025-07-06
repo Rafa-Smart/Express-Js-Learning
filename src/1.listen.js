@@ -73,3 +73,10 @@ intro.call(obj, "Hi", "Bye");     // langsung dipanggil
 intro.apply(obj, ["Hi", "Bye"]);  // langsung juga, args dalam array
 const introBound = intro.bind(obj, "Hi");
 introBound("Bye");                // nanti dipanggil
+
+
+
+//ohh jadi kalo bind itu khusus utuk memanggil fungsi lain, tapi untuk dimasukan ke dalam variable
+// jadi agar status thisnya tidak hilang
+// karena kalo pake call atau apply, maka thisnya akan hilang
+// jadi ini untuk mengunci this pada fungsi tertentu, dan bisa dipanggil kapan saja
