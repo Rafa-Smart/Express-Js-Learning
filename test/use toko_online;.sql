@@ -16,3 +16,4 @@ SELECT user, host, plugin FROM mysql.user;
 -- test
 -- test
 -- test
+-- test
