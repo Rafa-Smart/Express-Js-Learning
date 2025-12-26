@@ -30,6 +30,7 @@ describe("testing async await...", () => {
         // nah tapi kalo yg pake .then() kita bisa langsung (promise)
         // atau pake yg biasa pake done()
         // tets
+        // tets
 
 
         // nah tapi kalo pake async ini lebih simple
