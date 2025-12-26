@@ -32,6 +32,7 @@ describe("testing async await...", () => {
         // tets
         // tets
         // tets
+        // tets
 
 
         // nah tapi kalo pake async ini lebih simple
